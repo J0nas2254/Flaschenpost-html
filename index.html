@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flaschenpost - Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <a href="index.html"><img src="logo.png" alt="Flaschenpost Logo" class="logo" /></a>
+    </div>
+
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="mobile-nav" aria-hidden="true">
+      <button class="nav-close" aria-label="Menü schließen">×</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="archive.html">Vergangene Artikel</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Willkommen bei Flaschenpost</h1>
+      <p>Nachrichten, Geschichten und Ereignisse aus der Schule.</p>
+    </section>
+
+    <section class="articles" id="features">
+      <article class="news-card">
+        <img class="article-img" src="student_desk.jpg" alt="Artikel Bild">
+        <h3>Der Montags-Check: Zwischen Tiefschlaf und Tafelbild</h3>
+        <p>Der Start in die Woche fällt vielen Schülern schwer. Erfahre mehr über das Montags-Tief und Tipps, wie du es überwindest.</p>
+        <a href="montags-check.html">Mehr lesen</a>
+      </article>
+
+      <article class="news-card">
+        <img class="article-img" src="handy-report.jpg" alt="Artikel Bild">
+        <h3>Bildschirm-Sucht oder Pausen-Spaß? Der große Handy-Report</h3>
+        <p>Ein kurzer Blick auf den Schulhof genügt, um zu sehen: Smartphones sind überall. In den Pausen, zwischen den Stunden – die kleinen Bildschirme haben die Schulwelt erobert. Aber ist das wirklich nur harmloser Spaß?</p>
+        <a href="handy-report.html">Mehr lesen</a>
+      </article>
+
+      <!-- Artikel Template Start -->
+      <!--
+      <article class="news-card">
+        <img class="article-img" src="path/to/thumbnail.jpg" alt="Artikel Bild">
+        <h3>Artikelüberschrift</h3>
+        <p>Kurze Zusammenfassung in zwei Zeilen.</p>
+        <a href="article1.html">Mehr lesen</a>
+      </article>
+      -->
+      <!-- Artikel Template End -->
+      <!-- Kopieren Sie den obigen Block, um neue Artikel hinzuzufügen -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-note">
+      © 2026 Flaschenpost. Alle Rechte vorbehalten.
+    </p>
+  </footer>
+  <script>
+    (function() {
+      var header = document.querySelector('.site-header');
+      var toggle = document.querySelector('.nav-toggle');
+      var nav = document.querySelector('.mobile-nav');
+      var closeButton = document.querySelector('.nav-close');
+      var navLinks = nav.querySelectorAll('a');
+      var lastScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+      function openMenu() {
+        nav.classList.add('open');
+        toggle.classList.add('open');
+        toggle.setAttribute('aria-expanded', 'true');
+        nav.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('menu-open');
+      }
+
+      function closeMenu() {
+        nav.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        nav.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('menu-open');
+      }
+
+      toggle.addEventListener('click', function() {
+        if (nav.classList.contains('open')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      closeButton.addEventListener('click', closeMenu);
+      navLinks.forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+      });
+      window.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') closeMenu();
+      });
+
+      window.addEventListener('scroll', function() {
+        var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        if (currentScroll > lastScroll && currentScroll > 100 && !nav.classList.contains('open')) {
+          header.classList.add('hidden');
+        } else {
+          header.classList.remove('hidden');
+        }
+        lastScroll = currentScroll;
+      });
+    })();
+  </script>
+</body>
+</html>

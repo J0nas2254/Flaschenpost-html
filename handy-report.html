@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bildschirm-Sucht oder Pausen-Spaß? Der große Handy-Report</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--bg);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: var(--text);
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px 1rem 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      font-family: 'Georgia', serif;
+      font-size: 2.5em;
+      color: #2e8b57;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .byline {
+      font-style: italic;
+      color: #666;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    h3 {
+      font-family: 'Georgia', serif;
+      font-size: 1.8em;
+      color: #4682b4;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+    }
+
+    .article-img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .image-caption {
+      font-style: italic;
+      text-align: center;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    ul {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    .conclusion {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #2e8b57;
+      text-align: center;
+      margin-top: 30px;
+    }
+    .back-button {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 10px 15px;
+      background-color: #4682b4;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+    .back-button:hover {
+      background-color: #5a9bd4;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <a href="index.html"><img src="logo.png" alt="Flaschenpost Logo" class="logo" /></a>
+    </div>
+
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="mobile-nav" aria-hidden="true">
+      <button class="nav-close" aria-label="Menü schließen">×</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="archive.html">Vergangene Artikel</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <a href="index.html" class="back-button">← Zurück zur Übersicht</a>
+    <h1>Bildschirm-Sucht oder Pausen-Spaß? Der große Handy-Report</h1>
+    <p class="byline">Von: [Dein Name]</p>
+    <p>Ein kurzer Blick auf den Schulhof genügt, um zu sehen: Smartphones sind überall. In den Pausen, zwischen den Stunden – die kleinen Bildschirme haben die Schulwelt erobert. Aber ist das wirklich nur harmloser Spaß, oder lauert dahinter eine gefährliche Sucht? Wir haben uns auf Spurensuche begeben.</p>
+    <img class="article-img" src="handy-report.jpg" alt="Smartphone usage">
+    <p class="image-caption">Smartphones in der Schule – Segen oder Fluch?</p>
+    <h3>Das Phänomen „Phantom-Vibration“</h3>
+    <p>Habt ihr das auch schon erlebt? Das Handy vibriert in der Tasche, obwohl gar keine Nachricht gekommen ist. Wissenschaftler nennen das „Phantom-Vibration“ – eine Art Geistererscheinung, die unser Gehirn uns vorgaukelt. Es zeigt, wie sehr wir auf unsere Geräte konditioniert sind.</p>
+    <h3>Selbstversuch: 24 Stunden ohne Handy</h3>
+    <p>Um herauszufinden, wie abhängig wir wirklich sind, haben wir einen Selbstversuch gemacht: 24 Stunden komplett ohne Smartphone. Die Ergebnisse waren überraschend – und manchmal erschreckend. Plötzlich fehlte die Ablenkung, die Orientierung, sogar die soziale Verbindung.</p>
+    <h3>3 Tipps für echten Digital Detox</h3>
+    <ul>
+      <li><strong>Zeitlimits setzen:</strong> Nutze Apps wie „Screen Time“ auf dem iPhone oder „Digital Wellbeing“ auf Android, um deine Nutzung zu tracken und zu begrenzen.</li>
+      <li><strong>Handy-freie Zonen:</strong> Definiere Bereiche wie das Schlafzimmer oder den Esstisch als smartphone-frei. Das hilft, bewusster zu leben.</li>
+      <li><strong>Alternativen finden:</strong> Statt endlos zu scrollen, probiere Hobbys aus wie Lesen, Sport oder Gespräche mit Freunden. Es klingt banal, aber es funktioniert.</li>
+    </ul>
+    <p class="conclusion">Fazit: Smartphones sind tolle Werkzeuge, aber sie können auch zur Falle werden. Der Schlüssel liegt in der Balance – nutze sie bewusst, statt dich von ihnen nutzen zu lassen.</p>
+  </div>
+  <script>
+    (function() {
+      var header = document.querySelector('.site-header');
+      var toggle = document.querySelector('.nav-toggle');
+      var nav = document.querySelector('.mobile-nav');
+      var closeButton = document.querySelector('.nav-close');
+      var navLinks = nav.querySelectorAll('a');
+      var lastScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+      function openMenu() {
+        nav.classList.add('open');
+        toggle.classList.add('open');
+        toggle.setAttribute('aria-expanded', 'true');
+        nav.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('menu-open');
+      }
+
+      function closeMenu() {
+        nav.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        nav.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('menu-open');
+      }
+
+      toggle.addEventListener('click', function() {
+        if (nav.classList.contains('open')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      closeButton.addEventListener('click', closeMenu);
+      navLinks.forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+      });
+      window.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') closeMenu();
+      });
+
+      window.addEventListener('scroll', function() {
+        var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        if (currentScroll > lastScroll && currentScroll > 100 && !nav.classList.contains('open')) {
+          header.classList.add('hidden');
+        } else {
+          header.classList.remove('hidden');
+        }
+        lastScroll = currentScroll;
+      });
+    })();
+  </script>
+</body>
+</html></content>

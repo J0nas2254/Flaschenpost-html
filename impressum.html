@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flaschenpost - Impressum</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <a href="index.html"><img src="logo.png" alt="Flaschenpost Logo" class="logo" /></a>
+    </div>
+
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="mobile-nav" aria-hidden="true">
+      <button class="nav-close" aria-label="Menü schließen">×</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="archive.html">Vergangene Artikel</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-content">
+      <h1>Impressum</h1>
+
+      <div class="impressum-section">
+        <h2>Angaben gemäß § 5 TMG</h2>
+        <p>Gymnasium Schloss Plön<br>
+        Prinzenstraße 8<br>
+        24306 Plön<br>
+        Deutschland</p>
+        </div>
+      <div class="impressum-section">
+        <h2>Kontakt</h2>
+        <p>Telefon: ?<br>
+        E-Mail: ?<br>
+        webseite: ?</p>
+      </div>
+
+      <div class="impressum-section">
+        <h2>Verantwortlich für den Inhalt</h2>
+        <p>Redaktionsleitung: Samira Lea Rezaei Amin<br>
+        E-Mail: ?</p>
+        <p>Die Flaschenpost ist die Schulzeitung des Gymnasium Schloss Plön.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-note">
+      © 2026 Flaschenpost. Copyright Gymnasium Schloss Plön 
+    </p>
+  </footer>
+  <script>
+    (function() {
+      var header = document.querySelector('.site-header');
+      var toggle = document.querySelector('.nav-toggle');
+      var nav = document.querySelector('.mobile-nav');
+      var closeButton = document.querySelector('.nav-close');
+      var navLinks = nav.querySelectorAll('a');
+      var lastScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+      function openMenu() {
+        nav.classList.add('open');
+        toggle.classList.add('open');
+        toggle.setAttribute('aria-expanded', 'true');
+        nav.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('menu-open');
+      }
+
+      function closeMenu() {
+        nav.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        nav.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('menu-open');
+      }
+
+      toggle.addEventListener('click', function() {
+        if (nav.classList.contains('open')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      closeButton.addEventListener('click', closeMenu);
+      navLinks.forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+      });
+      window.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') closeMenu();
+      });
+
+      window.addEventListener('scroll', function() {
+        var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        if (currentScroll > lastScroll && currentScroll > 100 && !nav.classList.contains('open')) {
+          header.classList.add('hidden');
+        } else {
+          header.classList.remove('hidden');
+        }
+        lastScroll = currentScroll;
+      });
+    })();
+  </script>
+</body>
+</html>

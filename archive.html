@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flaschenpost - Vergangene Artikel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <a href="index.html"><img src="logo.png" alt="Flaschenpost Logo" class="logo" /></a>
+    </div>
+
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="mobile-nav" aria-hidden="true">
+      <button class="nav-close" aria-label="Menü schließen">×</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="archive.html">Vergangene Artikel</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-content">
+      <h1>Vergangene Artikel</h1>
+      <p>Alle vergangenen Ausgaben der Flaschenpost.</p>
+
+      <div class="archive-grid">
+        <article class="archive-item">
+          <h3>Heise</h3>
+          <img class="article-img" src="heise.jpg" alt="Ausgabe Bild">
+          <p>Artikel über Heise.</p>
+          <a href="heise.pdf">Lesen</a>
+        </article>
+        <!-- Archiv Eintrag Template Start -->
+        <!--
+        <article class="archive-item">
+          <h3>Monat Jahr</h3>
+          <img class="article-img" src="path/to/image.jpg" alt="Ausgabe Bild">
+          <p>Kurze Beschreibung der Ausgabe.</p>
+          <a href="ausgabe-monat-jahr.html">Lesen</a>
+        </article>
+        -->
+        <!-- Archiv Eintrag Template End -->
+        <!-- Kopieren Sie den obigen Block, um neue Archiv-Einträge hinzuzufügen -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-note">
+      © 2026 Flaschenpost. Alle Rechte vorbehalten.
+    </p>
+  </footer>
+  <script>
+    (function() {
+      var header = document.querySelector('.site-header');
+      var toggle = document.querySelector('.nav-toggle');
+      var nav = document.querySelector('.mobile-nav');
+      var closeButton = document.querySelector('.nav-close');
+      var navLinks = nav.querySelectorAll('a');
+      var lastScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+      function openMenu() {
+        nav.classList.add('open');
+        toggle.classList.add('open');
+        toggle.setAttribute('aria-expanded', 'true');
+        nav.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('menu-open');
+      }
+
+      function closeMenu() {
+        nav.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        nav.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('menu-open');
+      }
+
+      toggle.addEventListener('click', function() {
+        if (nav.classList.contains('open')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      closeButton.addEventListener('click', closeMenu);
+      navLinks.forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+      });
+      window.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') closeMenu();
+      });
+
+      window.addEventListener('scroll', function() {
+        var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        if (currentScroll > lastScroll && currentScroll > 100 && !nav.classList.contains('open')) {
+          header.classList.add('hidden');
+        } else {
+          header.classList.remove('hidden');
+        }
+        lastScroll = currentScroll;
+      });
+    })();
+  </script>
+</body>
+</html>

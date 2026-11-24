@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Der Montags-Check</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--bg);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: var(--text);
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px 1rem 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      font-family: 'Georgia', serif;
+      font-size: 2.5em;
+      color: #2e8b57;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .byline {
+      font-style: italic;
+      color: #666;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-family: 'Georgia', serif;
+      font-size: 1.8em;
+      color: #4682b4;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+    .container img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .image-caption {
+      font-style: italic;
+      text-align: center;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    ul {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    .conclusion {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #2e8b57;
+      text-align: center;
+      margin-top: 30px;
+    }
+    .back-button {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 10px 15px;
+      background-color: #4682b4;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+    .back-button:hover {
+      background-color: #5a9bd4;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <a href="index.html"><img src="logo.png" alt="Flaschenpost Logo" class="logo" /></a>
+    </div>
+
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="mobile-nav" aria-hidden="true">
+      <button class="nav-close" aria-label="Menü schließen">×</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="archive.html">Vergangene Artikel</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <a href="index.html" class="back-button">← Zurück zur Übersicht</a>
+    <h1>Der Montags-Check: Zwischen Tiefschlaf und Tafelbild</h1>
+    <p class="byline">Von: Google Gemini</p>
+    <p>Es ist jede Woche das gleiche Drama: Der Wecker reißt uns um 6:30 Uhr aus den schönsten Träumen von ewigen Sommerferien. Während der Körper noch im Standby-Modus verweilt, verlangt der Mathelehrer in der ersten Stunde bereits Höchstleistungen in Kurvendiskussion. Aber warum fällt uns der Start in die Woche eigentlich so schwer?</p>
+    <img src="student_desk.jpg" alt="Student Desk">
+    <p class="image-caption">Ein typischer Start in die Schulwoche.</p>
+    <h2>Das Phänomen „Wochenend-Jetlag“</h2>
+    <p>Wissenschaftler (und leidgeplagte Schüler) wissen: Wer am Samstag bis zwei Uhr morgens zockt oder feiert, verschiebt seine innere Uhr. Wenn wir dann am Montag wieder früh rausmüssen, fühlt sich das für unser Gehirn an wie ein Flug von New York nach Berlin – nur ohne den Strandurlaub.</p>
+    <h2>Drei Tipps gegen das Montags-Tief</h2>
+    <ul>
+      <li><strong>Vorbereitung ist alles:</strong> Pack deine Tasche schon am Sonntagabend. Dein „Montags-Ich“ wird es dir danken, wenn es nicht panisch nach dem Geo-Heft suchen muss.</li>
+      <li><strong>Licht an:</strong> Sofort die Vorhänge auf! Tageslicht signalisiert dem Gehirn, dass die Nacht offiziell beendet ist.</li>
+      <li><strong>Das Pausen-Highlight:</strong> Verabrede dich für die große Pause mit Freunden oder gönn dir einen besonderen Snack. Vorfreude ist die beste Motivation.</li>
+    </ul>
+    <p class="conclusion">Fazit: Der Montag geht vorbei – versprochen. Und das Beste daran? Danach sind es nur noch vier Tage bis zum nächsten Wochenende!</p>
+  </div>
+  <script>
+    (function() {
+      var header = document.querySelector('.site-header');
+      var toggle = document.querySelector('.nav-toggle');
+      var nav = document.querySelector('.mobile-nav');
+      var closeButton = document.querySelector('.nav-close');
+      var navLinks = nav.querySelectorAll('a');
+      var lastScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+      function openMenu() {
+        nav.classList.add('open');
+        toggle.classList.add('open');
+        toggle.setAttribute('aria-expanded', 'true');
+        nav.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('menu-open');
+      }
+
+      function closeMenu() {
+        nav.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        nav.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('menu-open');
+      }
+
+      toggle.addEventListener('click', function() {
+        if (nav.classList.contains('open')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      closeButton.addEventListener('click', closeMenu);
+      navLinks.forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+      });
+      window.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') closeMenu();
+      });
+
+      window.addEventListener('scroll', function() {
+        var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        if (currentScroll > lastScroll && currentScroll > 100 && !nav.classList.contains('open')) {
+          header.classList.add('hidden');
+        } else {
+          header.classList.remove('hidden');
+        }
+        lastScroll = currentScroll;
+      });
+    })();
+  </script>
+</body>
+</html></content>
